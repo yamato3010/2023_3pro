@@ -1,17 +1,295 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>レベル1-福祉</title>
-    
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 360px; /* 6 cells * 50px per cell */
+        }
+        .cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .cell-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cell-number {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            font-size: 10px;
+        }
+        .dummy-cell {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: black;
+        }
+    </style>
 </head>
 <body>
     <h1>ここに頑張ってクロスワードを実装</h1>
-    
+    <!-- 文字選択ボタンを実装 -->
+    <button class="letter-button" data-letter="A">A</button>
+    <button class="letter-button" data-letter="B">B</button>
+    <button class="letter-button" data-letter="C">C</button>
+    <button class="letter-button" data-letter="D">D</button>
+    <button class="letter-button" data-letter="E">E</button>
+    <button class="letter-button" data-letter="F">F</button>
+    <button class="letter-button" data-letter="G">G</button>
+    <button class="letter-button" data-letter="H">H</button>
+    <button class="letter-button" data-letter="I">I</button>
+    <button class="letter-button" data-letter="J">J</button>
+    <button class="letter-button" data-letter="K">K</button>
+    <button class="letter-button" data-letter="L">L</button>
+    <button class="letter-button" data-letter="M">M</button>
+    <button class="letter-button" data-letter="N">N</button>
+    <button class="letter-button" data-letter="O">O</button>
+    <button class="letter-button" data-letter="P">P</button>
+    <button class="letter-button" data-letter="Q">Q</button>
+    <button class="letter-button" data-letter="R">R</button>
+    <button class="letter-button" data-letter="S">S</button>
+    <button class="letter-button" data-letter="T">T</button>
+    <button class="letter-button" data-letter="U">U</button>
+    <button class="letter-button" data-letter="V">V</button>
+    <button class="letter-button" data-letter="W">W</button>
+    <button class="letter-button" data-letter="X">X</button>
+    <button class="letter-button" data-letter="Y">Y</button>
+    <button class="letter-button" data-letter="Z">Z</button>
+
+    <!-- ここにクロスワードのマスを実装 -->
+        <div class="grid">
+            <div class="cell">
+                <span class="cell-number">1</span>
+                <div class="cell-content" data-correct-letter="A" id="cell-1"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number"></span>
+                <div class="cell-content" data-correct-letter="B" id="cell-2"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number"></span>
+                <div class="cell-content" data-correct-letter="C" id="cell-3"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number"></span>
+                <div class="cell-content" data-correct-letter="D" id="cell-4"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">5</span>
+                <div class="cell-content" data-correct-letter="E" id="cell-5"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">6</span>
+                <div class="cell-content" data-correct-letter="F" id="cell-6"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number"></span>
+                <div class="cell-content" data-correct-letter="E" id="cell-7"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">8</span>
+                <div class="cell-content" data-correct-letter="H" id="cell-8"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">9</span>
+                <div class="cell-content" data-correct-letter="I" id="cell-9"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">10</span>
+                <div class="cell-content" data-correct-letter="J" id="cell-10"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">11</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-11"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">12</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-12"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number"></span>
+                <div class="cell-content" data-correct-letter="F" id="cell-13"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">14</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-14"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">15</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-15"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">16</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-16"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">17</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-17"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">18</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-18"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">19</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-19"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">20</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-20"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">21</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-21"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">22</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-22"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">23</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-23"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">24</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-24"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">25</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-25"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">26</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-26"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">27</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-27"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">28</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-28"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">29</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-29"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">30</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-30"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">31</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-31"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">32</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-32"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">33</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-33"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">34</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-34"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">35</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-35"></div>
+            </div>
+            <div class="cell">
+                <span class="cell-number">36</span>
+                <div class="cell-content" data-correct-letter="K" id="cell-36"></div>
+            </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        var selectedLetter = null;
+        $('.letter-button').click(function() {
+            // 選択された文字を記憶する
+            selectedLetter = $(this).data('letter');
+        });
+        $('.cell-content').click(function() {
+            // 緑色のマスは変更できないように
+            var bgColor = $(this).css('background-color');
+            if (bgColor === 'rgb(144, 238, 144)') {
+                return;
+            }
+
+            // すでにマスに文字が配置されている場合、その文字のボタンを再表示する
+            var existingLetter = $(this).text();
+            if (existingLetter) {
+                $('.letter-button[data-letter="' + existingLetter + '"]').show();
+            }
+
+            if (selectedLetter) {
+                // マスに選択した文字を配置する（将来的には指文字画像を配置）
+                $(this).text(selectedLetter);
+                // 選択した文字のボタンを非表示にする
+                $('.letter-button[data-letter="' + selectedLetter + '"]').hide();
+                // もし選択された文字が正しければ、マスの背景色を変更する
+                if ($(this).data('correct-letter') === selectedLetter) {
+                    $(this).css('background-color', 'rgb(144 238 144)');
+                }else{
+                    $(this).css('background-color', '');
+                }
+                selectedLetter = null;
+                
+                // 特定のセルが正しい文字で埋められているかチェックする
+                // TODO: specificCellsとallCorrectを一つのオブジェクトにまとめる。それをループで回せばいいんじゃね？
+                var specificCells = ['#cell-1', '#cell-2', '#cell-3', '#cell-4'];
+                var allCorrect = true;
+                for (var i = 0; i < specificCells.length; i++) {
+                    var cell = $(specificCells[i]);
+                    if (cell.text() !== cell.data('correct-letter')) {
+                        allCorrect = false;
+                        break;
+                    }
+                }
+
+                // 特定のセルが正しい文字で埋められているかチェックする
+                var specificCells = ['#cell-1', '#cell-7', '#cell-13'];
+                var allCorrect = true;
+                for (var i = 0; i < specificCells.length; i++) {
+                    var cell = $(specificCells[i]);
+                    if (cell.text() !== cell.data('correct-letter')) {
+                        allCorrect = false;
+                        break;
+                    }
+                }
+
+            } else {
+                // マスに配置された文字のボタンを再表示する
+                var letter = $(this).text();
+                $('.letter-button[data-letter="' + letter + '"]').show();
+                $(this).text('');
+                // マスの背景色を元に戻す
+                $(this).css('background-color', '');
+            }
+        });
+    </script>
 </body>
 </html>
