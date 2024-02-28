@@ -60,7 +60,7 @@ $('.cell-content').click(function () {
   if (selectedLetter) {
     // マスに選択した文字を配置する（将来的には指文字画像を配置）
     $(this).text(selectedLetter);
-    $(this).html('<img class="hand_syuwa" data-letter="' + selectedLetter + '" src="' + selectedImage + '" alt="選択された画像">');
+    $(this).html('<img class="hand-syuwa-on-cell" data-letter="' + selectedLetter + '" src="' + selectedImage + '" alt="選択された画像">');
     // 選択した文字のボタンを非表示にする
     $('.letter-button[data-letter="' + selectedLetter + '"]').hide();
     // もし選択された文字が正しければ、マスの背景色を変更する
