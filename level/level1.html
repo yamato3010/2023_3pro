@@ -5,54 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>レベル1-福祉</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            width: 360px; /* 6 cells * 50px per cell */
-        }
-        .cell {
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            position: relative;
-        }
-        .cell-content {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cell-number {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            font-size: 10px;
-        }
-        .dummy-cell {
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            background: black;
-        }
-
-        .hand_syuwa {
-            width: 20px;
-            height: 20px;
-        }
-        
-    </style>
+    <link href="../css/level/6x6.css" rel="stylesheet">
 </head>
-<body>
+
+<body data-check-groups='[ { "specificCells" : ["#cell-1", "#cell-2" , "#cell-3" , "#cell-4" ], "alertShown" : false }, { "specificCells" : ["#cell-1", "#cell-7" , "#cell-13" ], "alertShown" : false }]'>
     <h1>ここに頑張ってクロスワードを実装</h1>
     <!-- 文字選択ボタンを実装 -->
     <button class="letter-button" data-letter="a" data-img="../img/hand_syuwa/hand_syuwa_a_01.png" data-img-src="../img/hand_syuwa/hand_syuwa_a_01.png"><img class="hand_syuwa" src="../img/hand_syuwa/hand_syuwa_a_01.png" alt="あ"></button>
@@ -252,92 +208,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-        // グローバル変数
-        // マス目のグループごとに、特定のセルが正しい文字で埋められているかチェックする
-        var checkGroups = [
-                { specificCells: ['#cell-1', '#cell-2', '#cell-3', '#cell-4'], alertShown: false },
-                { specificCells: ['#cell-1', '#cell-7', '#cell-13'], alertShown: false }
-            ];
-
-        // ボタンを押して選択された文字を記憶する
-        var selectedLetter = null;
-        var selectedImage = null;
-
-        // 特定のセルが正しい文字で埋められているかチェックする
-        function checkCorrectness(group, alertMessage) {
-                var allCorrect = true;
-                for (var i = 0; i < group.specificCells.length; i++) {
-                    // cellを取得
-                    var cell = $(group.specificCells[i]);
-                    // cell内のimgタグを取得
-                    var img = cell.find('img');
-                    if (img.data('letter') !== cell.data('correct-letter')) {
-                        allCorrect = false;
-                        break;
-                    }
-                }
-                if (allCorrect && !group.alertShown) {
-                    alert(alertMessage);
-                    group.alertShown = true;
-                }
-            }
-
-        // 文字選択ボタンをクリックしたときの処理
-        $('.letter-button').click(function() {
-            // 選択された文字を記憶する
-            selectedLetter = $(this).data('letter');
-            selectedImage = $(this).data('img');
-        });
-
-        // マスをクリックしたときの処理
-        $('.cell-content').click(function() {
-            // 緑色のマスは変更できないように
-            var bgColor = $(this).css('background-color');
-            if (bgColor === 'rgb(144, 238, 144)') {
-                return;
-            }
-
-            // すでにマスに文字が配置されている場合、その文字のボタンを再表示する
-            var img = $(this).find('img');
-            var existingLetter = img.data('letter');
-            if (existingLetter) {
-                $('.letter-button[data-letter="' + existingLetter + '"]').show();
-            }
-
-            if (selectedLetter) {
-                // マスに選択した文字を配置する（将来的には指文字画像を配置）
-                $(this).text(selectedLetter);
-                $(this).html('<img class="hand_syuwa" data-letter="' + selectedLetter + '" src="' + selectedImage + '" alt="選択された画像">');
-                // 選択した文字のボタンを非表示にする
-                $('.letter-button[data-letter="' + selectedLetter + '"]').hide();
-                // もし選択された文字が正しければ、マスの背景色を変更する
-                if ($(this).data('correct-letter') === selectedLetter) {
-                    $(this).css('background-color', 'rgb(144 238 144)');
-                }else{
-                    $(this).css('background-color', '');
-                }
-                selectedLetter = null;
-                selectedImage = null;
-                
-                // 特定のセルが正しい文字で埋められているかチェックする
-                for (var i = 0; i < checkGroups.length; i++) {
-                    if (checkGroups[i].alertShown) {
-                        continue;
-                    }else{
-                        checkCorrectness(checkGroups[i], (i + 1) + '、正解です！');
-                    }
-                }
-
-            } else {
-                // マスに配置された文字のボタンを再表示する
-                var letter = $(this).text();
-                $('.letter-button[data-letter="' + letter + '"]').show();
-                $(this).text('');
-                // マスの背景色を元に戻す
-                $(this).css('background-color', '');
-            }
-        });
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
