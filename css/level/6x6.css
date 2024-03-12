@@ -1,7 +1,7 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 360px; /* 6 cells * 50px per cell */
+  width: 350px; /* 6 cells * 50px per cell */
 }
 .cell {
   width: 50px;
