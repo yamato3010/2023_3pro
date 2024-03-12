@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rakus</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>参考サイト: https://tech-blog.rakus.co.jp/entry/20210226/bootstrap</header>
+    <!-- https://getbootstrap.jp/docs/5.0/getting-started/download/ -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-6 border border-dark">2</div>
+            <div class="col-md-2 col-sm-2 border border-dark">2</div>
+            <div class="col-md-2 col-sm-2 border border-dark">2</div>
+            <div class="col-md-6 col-sm-2 border border-dark">6</div>
+        </div>
+        <h2>レスポンシブデザインに対応するための基礎知識</h2>
+        列を合わせる場合は合計値を12にすると良い
+        例えば、<span>lg</span>の画面お大きさにおいて5, 2, 3, 2にする場合<br>
+
+        &lt;div class=&quot;row&quot; <br>
+        &lt;div class=&quot;col-<span>lg</span>-5&quot;&gt;5/12&lt;/div&gt; <br>
+        &lt;div class=&quot;col-<span>lg</span>-2&quot;&gt;2/12&lt;/div&gt; <br>
+        &lt;div class=&quot;col-<span>lg</span>-3&quot;&gt;5/12&lt;/div&gt; <br>
+        &lt;div class=&quot;col-<span>lg</span>-2&quot;&gt;2/12&lt;/div&gt; <br>
+        &lt;/div&gt;
+
+        <div class="row">
+            <div class="col-lg-5 border border-dark">いったい</div>
+            <div class="col-lg-2 border border-dark">この知識が</div>
+            <div class="col-lg-3 border border-dark">何に</div>
+            <div class="col-lg-2 border border-dark">使えるんだろうね</div>
+        </div>
+
+        といった感じで書けば良い
+
+        <h3>画面サイズ</h3>
+        <!--
+        <p>xs: 576px以下<br>
+            ms: 576~768px未満<br>
+            md: 768-992<br>
+            lg: 992-1200<br>
+            他にはxl, xxlがある
+        -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <!-- scopeがなんなのか-->
+                    <th class="col-lg-4" scope="col">prefix</th>
+                    <th class="col-lg-4" scope="col">最小px</th>
+                    <th class="col-lg-4" scope="col">最大px（未満で指定）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row">xs</td>
+                    <td scope="row">1</td>
+                    <td scope="row">576</td>
+                </tr>
+                <tr>
+                    <td scope="row">ms</td>
+                    <td scope="row">576</td>
+                    <td scope="row">768</td>
+                </tr>
+                <tr>
+                    <td scope="row">md</td>
+                    <td scope="row">768</td>
+                    <td scope="row">992</td>
+                </tr>
+                <tr>
+                    <td scope="row">xs</td>
+                    <td scope="row">992</td>
+                    <td scope="row">1200</td>
+                </tr>
+        </table>
+        上記のprefixの他にxlやxxlがある
+
+
+        <br>
+        そのプレフィックスで指定した大きさより大きい（lgからみたxlやxxl）場合は<br>
+        lgで指定したグリッド形式が適用される<br>
+        逆に指定した画面サイズより小さい場合は各列が1行ずつ画面いっぱい表示される<br>
+        ・他の要素でも, class=&quot;col-lg-4&quot;で指定してあげれば適用される<br>
+
+        sample(横幅1085px(lg)の場合)でxxlを指定してみる<br>
+        <div class="row">
+            <div class="col-xxl-5 border border-dark">こんな</div>
+            <div class="col-xxl-2 border border-dark">感じ</div>
+            <div class="col-xxl-3 border border-dark">に</div>
+            <div class="col-xxl-2 border border-dark">なるよん</div>
+        </div>
+        </p>
+        <hr>
+        <h3>フォームの書き方</h3>
+
+        <div class="container-fluid">
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-link">提出</button>
+
+            </form>
+        </div>
+
+        <p>1つのform要素（textやemailなど）ごとにclass=&quot;form-group&quot; というように指定する<br>
+            inputにおいて、class=&quot;form-control&quot;で指定する
+            <span>Button</span>に関しては&lt;Button&gt;タグで指定する<br>
+            リンクを貼る場合は&lt;a&gt;タグを用いてclass=&QUOT;btn btn-...&QUOT;と指定すれば良い
+        </p>
+        
+        <!-- 画像はよくわからないから省略
+        <div class="text-center" style="background-color: black;">
+            <img src="image/img-sample.png" class="img-thumbnail rounded">
+        </div>
+        -->
+
+        <a type="button" class="btn btn-info" href="bootstrap2.html">next page</a>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

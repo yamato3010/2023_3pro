@@ -1,0 +1,29 @@
+@charset "UTF8";
+
+body{
+    text-align:center;   /* body要素を真ん中に配置する */
+}
+
+h1:first-letter{
+    font-size:2em;  /* 「指」を大きくしている */
+    color:#fcab32;  
+}
+
+h1{
+    font-size:4em;
+}
+
+.menue{
+    font-size:30px;
+}
+a:visited{
+    color:black
+}
+a:hover{
+    color:#fcab32;
+}
+
+.term{
+    display:block;
+    margin:30px auto 30px;
+}
