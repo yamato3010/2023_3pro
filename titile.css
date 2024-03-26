@@ -1,7 +1,13 @@
-@charset "UTF8";
-
 body{
     text-align:center;   /* body要素を真ん中に配置する */
+    background-image:url("../3年プロジェクト/img/pa2.jpg");
+    background-repeat: no-repeat;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    display:flex;
+    flex-flow: column;
 }
 
 h1:first-letter{
@@ -11,11 +17,31 @@ h1:first-letter{
 
 h1{
     font-size:4em;
-}
+    font-family:Yu Gothic UI Semibold;
+    animation-name:fadeLeftAnime;
+    animation-duration:3s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeLeftAnime{
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+    
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+   
 
 .menue{
     font-size:30px;
+    font-family:Meiryo;
 }
+
 a:visited{
     color:black
 }
@@ -25,5 +51,5 @@ a:hover{
 
 .term{
     display:block;
-    margin:30px auto 30px;
+    margin:30px 0;
 }

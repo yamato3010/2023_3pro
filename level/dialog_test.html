@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>モードレスダイアログを用いたダイアログ表示のテスト</h1>
+    <dialog>
+      <h2>解説</h2>
+      <p>これはモードレスダイアログです</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/IRlUPHpAzmQ?si=f6xZVIzsqWAxyYxW&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br>
+      <button id="close">閉じる</button>
+    </dialog>
+    <button id="show">モードレスダイアログを開く</button>
+
+    <script>
+
+    var dialog = document.querySelector('dialog');
+    var btn_show = document.getElementById('show');
+    var btn_close = document.getElementById('close')
+    btn_show.addEventListener('click', function() {
+      dialog.show();
+      console.log('show');
+    }, false);
+
+    btn_close.addEventListener('click', function() {
+      dialog.close();
+      console.log('close');
+    }, false);
+
+    </script>
+
+  </body>
+</html>

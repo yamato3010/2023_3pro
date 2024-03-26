@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動的HTML生成（ボタン）</title>
+</head>
+<body>
+    <h1>動的HTML生成（ボタン）</h1>
+    <button onclick="addNewElement()">ボタンを追加</button>
+    <div id="dynamic-content"></div>
+
+    <script>
+      var buttons = [
+        {dataLetter: 'a', dataImg: "../img/hand_syuwa/hand_syuwa_a_01.png"},
+        {dataLetter: 'i', dataImg: "../img/hand_syuwa/hand_syuwa_a_02.png"},
+        {dataLetter: 'u', dataImg: "../img/hand_syuwa/hand_syuwa_a_03.png"},
+        {dataLetter: 'e', dataImg: "../img/hand_syuwa/hand_syuwa_a_04.png"},
+        {dataLetter: 'o', dataImg: "../img/hand_syuwa/hand_syuwa_a_05.png"},
+        {dataLetter: 'ka', dataImg: "../img/hand_syuwa/hand_syuwa_a_06.png"},
+        {dataLetter: 'ki', dataImg: "../img/hand_syuwa/hand_syuwa_a_07.png"},
+        {dataLetter: 'ku', dataImg: "../img/hand_syuwa/hand_syuwa_a_08.png"},
+        {dataLetter: 'ke', dataImg: "../img/hand_syuwa/hand_syuwa_a_09.png"},
+        {dataLetter: 'ko', dataImg: "../img/hand_syuwa/hand_syuwa_a_10.png"},
+        {dataLetter: 'sa', dataImg: "../img/hand_syuwa/hand_syuwa_a_11.png"},
+        {dataLetter: 'si', dataImg: "../img/hand_syuwa/hand_syuwa_a_12.png"},
+        {dataLetter: 'su', dataImg: "../img/hand_syuwa/hand_syuwa_a_13.png"},
+        {dataLetter: 'se', dataImg: "../img/hand_syuwa/hand_syuwa_a_14.png"},
+        {dataLetter: 'so', dataImg: "../img/hand_syuwa/hand_syuwa_a_15.png"},
+        {dataLetter: 'ta', dataImg: "../img/hand_syuwa/hand_syuwa_a_16.png"},
+        {dataLetter: 'ti', dataImg: "../img/hand_syuwa/hand_syuwa_a_17.png"},
+        {dataLetter: 'tu', dataImg: "../img/hand_syuwa/hand_syuwa_a_18.png"},
+        {dataLetter: 'te', dataImg: "../img/hand_syuwa/hand_syuwa_a_19.png"},
+        {dataLetter: 'to', dataImg: "../img/hand_syuwa/hand_syuwa_a_20.png"},
+        {dataLetter: 'na', dataImg: "../img/hand_syuwa/hand_syuwa_a_21.png"},
+        {dataLetter: 'ni', dataImg: "../img/hand_syuwa/hand_syuwa_a_22.png"},
+        {dataLetter: 'nu', dataImg: "../img/hand_syuwa/hand_syuwa_a_23.png"},
+        {dataLetter: 'ne', dataImg: "../img/hand_syuwa/hand_syuwa_a_24.png"},
+        {dataLetter: 'no', dataImg: "../img/hand_syuwa/hand_syuwa_a_25.png"},
+        {dataLetter: 'ha', dataImg: "../img/hand_syuwa/hand_syuwa_a_26.png"},
+        {dataLetter: 'hi', dataImg: "../img/hand_syuwa/hand_syuwa_a_27.png"},
+        {dataLetter: 'hu', dataImg: "../img/hand_syuwa/hand_syuwa_a_28.png"},
+        {dataLetter: 'he', dataImg: "../img/hand_syuwa/hand_syuwa_a_29.png"},
+        {dataLetter: 'ho', dataImg: "../img/hand_syuwa/hand_syuwa_a_30.png"},
+        {dataLetter: 'ma', dataImg: "../img/hand_syuwa/hand_syuwa_a_31.png"},
+        {dataLetter: 'mi', dataImg: "../img/hand_syuwa/hand_syuwa_a_32.png"},
+        {dataLetter: 'mu', dataImg: "../img/hand_syuwa/hand_syuwa_a_33.png"},
+        {dataLetter: 'me', dataImg: "../img/hand_syuwa/hand_syuwa_a_34.png"},
+        {dataLetter: 'mo', dataImg: "../img/hand_syuwa/hand_syuwa_a_35.png"},
+        {dataLetter: 'ya', dataImg: "../img/hand_syuwa/hand_syuwa_a_36.png"},
+        {dataLetter: 'yu', dataImg: "../img/hand_syuwa/hand_syuwa_a_37.png"},
+        {dataLetter: 'yo', dataImg: "../img/hand_syuwa/hand_syuwa_a_38.png"},
+        {dataLetter: 'ra', dataImg: "../img/hand_syuwa/hand_syuwa_a_39.png"},
+        {dataLetter: 'ri', dataImg: "../img/hand_syuwa/hand_syuwa_a_40.png"},
+        {dataLetter: 'ru', dataImg: "../img/hand_syuwa/hand_syuwa_a_41.png"},
+        {dataLetter: 're', dataImg: "../img/hand_syuwa/hand_syuwa_a_42.png"},
+        {dataLetter: 'ro', dataImg: "../img/hand_syuwa/hand_syuwa_a_43.png"},
+        {dataLetter: 'wa', dataImg: "../img/hand_syuwa/hand_syuwa_a_44.png"},
+        {dataLetter: 'wo', dataImg: "../img/hand_syuwa/hand_syuwa_a_45.png"},
+        {dataLetter: 'n', dataImg: "../img/hand_syuwa/hand_syuwa_a_46.png"}
+      ]
+
+        function addNewElement() {
+            const dynamicContent = document.getElementById('dynamic-content');
+            const newElement = document.createElement('button');
+            newElement.textContent = '新しい要素が追加されました！';
+            dynamicContent.appendChild(newElement);
+        }
+    </script>
+</body>
+</html>

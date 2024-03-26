@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>用語解説</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .modal-container {
+            text-align: center;
+        }
+
+        img {
+            position: center;
+        }
+    </style>
+<!--
+
+参考サイト（ドキュメント）
+https://getbootstrap.jp/docs/5.3/components/modal/
+改修予定　3/12
+現状imgではあるけど、とりあえずvideoでできるようにする 
+    モーダルのデザインをどうしようかな〜
+    モーダルの個数分長いコードを書くことになっているからどうにか短くできないだろうか
+    コピペの変更手順: 表示のトリガーとなる部分のdata-bs-targetにid属性を指定する、.modal fadeのidと.modal-title fs-5のidを（data-bs-targetに）一致させる
+    他の用語解説ページなどを参考にして...シンプルすぎるのを解消したい（CSS班に任せるかもしれないけど）
+
+-->
+
+</head>
+
+<body>
+    <a href="title.html"><img src="image/logo.png" width="150px" height="40px"></a><br>
+
+
+    <p type="botton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#walk">歩く</p>
+    <p type="botton" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#hello">こんにちは</p>
+
+    <!-- Modal 歩く -->
+    <div class="modal fade" id="walk" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="walk">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-container"><!-- 独自クラス -->
+                        <img src="https://placehold.jp/320x240.png" alt="サンプル画像">
+                        <h3>手話: 歩く</h3>
+                        <p>右手の人差し指と中指を足に見立てて動かす動作</p>
+                    </div><!-- end modal-container -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal こんにちは -->
+    <div class="modal fade" id="hello" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-container"><!-- 独自クラス -->
+                        <img src="https://placehold.jp/320x240.png" alt="サンプル画像">
+                        <h3>手話: こんにちは</h3>
+                        <p>人差し指と中指を立てて...以下しょうりゃｋ</p>
+                    </div><!-- end modal-container -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
