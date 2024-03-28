@@ -11,7 +11,6 @@ if (checkGroupsData) {
 } else {
     console.error('No data-check-groups attribute found');
 }
-
 // ボタンを押して選択された文字を記憶する
 var selectedLetter = null;
 var selectedImage = null;
@@ -40,6 +39,7 @@ $('.letter-button').click(function () {
   // 選択された文字を記憶する
   selectedLetter = $(this).data('letter');
   selectedImage = $(this).data('img');
+  console.log("selectedLetter: " + selectedLetter);
 });
 
 // マスをクリックしたときの処理
