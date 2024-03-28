@@ -2,5 +2,5 @@ hidden=[".config"]
 modules = ["web:v2-20230623-0b7a606"]
 
 [deployment]
-publicDir = "/title.html"
+publicDir = "/"
 deploymentTarget = "static"
