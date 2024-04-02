@@ -1,20 +1,9 @@
 // グローバル変数
-// マス目のグループごとに、特定のセルが正しい文字で埋められているかチェックする
-var checkGroupsData = $('body').attr('data-check-groups');
-var checkGroups;
-if (checkGroupsData) {
-    try {
-        checkGroups = JSON.parse(checkGroupsData);
-    } catch (e) {
-        console.error('Invalid JSON:', checkGroupsData);
-    }
-} else {
-    console.error('No data-check-groups attribute found');
-}
 // ボタンを押して選択された文字を記憶する
 var selectedLetter = null;
 var selectedImage = null;
-
+var getCheckGroupsDataFlag = false;
+var checkGroups;
 // 特定のセルが正しい文字で埋められているかチェックする
 function checkCorrectness(group, alertMessage) {
   var allCorrect = true;
@@ -43,9 +32,10 @@ $('.letter-button').click(function () {
 });
 
 // マスをクリックしたときの処理
-$('.cell-content').click(function () {
+  $(document).on('click', '.cell-content', function() {
   // 緑色のマスは変更できないように
   var bgColor = $(this).css('background-color');
+  // TODO:判定に背景色を使わないほうがいい
   if (bgColor === 'rgb(144, 238, 144)') {
     return;
   }
@@ -71,7 +61,23 @@ $('.cell-content').click(function () {
     }
     selectedLetter = null;
     selectedImage = null;
-
+    
+    // 答え格納データを初回だけ更新するように
+    if(!getCheckGroupsDataFlag) {
+      console.log("更新")
+      var checkGroupsData = $('body').attr('data-check-groups');
+      if (checkGroupsData) {
+          try {
+              checkGroups = JSON.parse(checkGroupsData);
+              getCheckGroupsDataFlag = true;
+          } catch (e) {
+              console.error('Invalid JSON:', checkGroupsData);
+          }
+      } else {
+          console.error('No data-check-groups attribute found');
+      }
+    } 
+    
     // 特定のセルが正しい文字で埋められているかチェックする
     for (var i = 0; i < checkGroups.length; i++) {
       if (checkGroups[i].alertShown) {
