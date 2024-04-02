@@ -62,7 +62,7 @@ for (let q of mondai[0].quiz) {
   console.log(q);
   // ヒントエリアの描画
   let q_elm = document.createElement("li");
-  q_elm.innerHTML = mondai[0].board[q.loc[0]][q.loc[1]] + "." + q.kagi;
+  q_elm.innerHTML = mondai[0].board[q.loc[1]][q.loc[0]] + "." + q.kagi;
   if (q.direction == "vertical") {
     vertical_key.appendChild(q_elm);
   } else if (q.direction == "horizontal") {
