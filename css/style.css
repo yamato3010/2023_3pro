@@ -1,0 +1,101 @@
+/* title */
+#title {
+  text-align: center;
+  /* body要素を真ん中に配置する */
+  background-image: url("../3年プロジェクト/img/pa2.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-flow: column;
+}
+
+#title-h1:first-letter {
+  font-size: 2em;
+  /* 「指」を大きくしている */
+  color: #fcab32;
+}
+
+#title-h1 {
+  font-size: 4em;
+  font-family: Yu Gothic UI Semibold;
+  animation-name: fadeLeftAnime;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+#title-menu {
+  font-size: 30px;
+  font-family: Meiryo;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100px;
+  margin: auto;
+}
+
+a:visited {
+  color: black
+}
+
+a:hover {
+  color: #fcab32;
+}
+
+.term {
+  display: block;
+  margin: 30px 0;
+}
+
+/* title-end */
+
+/* level select */
+h1 span {
+  font-weight: bold;
+  font-size: 4rem;
+  color: blue;
+}
+
+
+
+/* level select-end */
+
+/* glossary */
+
+/* glossary-end */
+
+/* game-main */
+.hand-syuwa {
+  width: 30px;
+  height: 30px;
+}
+
+#hints {
+  height: 200px;
+  /* 高さを適切な値に設定 */
+  overflow-y: auto;
+  /* 縦方向のスクロールを有効にする */
+  border: 1px solid #000;
+  /* 枠線を追加 */
+  padding: 10px;
+  /* パディングを追加 */
+}
+
+/* game-main-end */

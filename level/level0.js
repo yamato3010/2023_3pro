@@ -46,7 +46,7 @@ fetch('./levels.json')
   // 問題のタイトルを変更
   let titleElement = document.querySelector('.levelTitle');
   titleElement.textContent = currentLevelData[0].name;
-
+  // マス目を生成
   for (let cy = 0; cy < currentLevelData[0].board.length; cy++) {
     for (let cx = 0; cx < currentLevelData[0].board[cy].length; cx++) {
       cellNum++;

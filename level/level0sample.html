@@ -2,188 +2,228 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レベル0-サンプル</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/level/game-main.css" rel="stylesheet">
-    <link href="../css/level/10x10.css" rel="stylesheet">
-    <style>
-        #vertical, #horizontal {
-            list-style-type: none;
-        }
-        </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>レベル0-サンプル</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link href="../css/level/game-main.css" rel="stylesheet">
+	<link href="../css/level/10x10.css" rel="stylesheet">
+	<style>
+		#vertical,
+		#horizontal {
+			list-style-type: none;
+		}
+	</style>
 </head>
 
 <body
-    data-check-groups='[ { "specificCells" : ["#cell-1", "#cell-2" , "#cell-3" , "#cell-4" ], "alertShown" : false }, { "specificCells" : ["#cell-1", "#cell-7" , "#cell-13" ], "alertShown" : false }]'>
-    <h1>ここに頑張ってクロスワードを実装</h1>
-    <!-- 文字選択ボタンを実装 -->
-    <button class="letter-button" data-letter="a" data-img="../img/hand_syuwa/hand_syuwa_a_01.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_01.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_01.png" alt="あ"></button>
-    <button class="letter-button" data-letter="i" data-img="../img/hand_syuwa/hand_syuwa_a_02.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_02.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_02.png" alt="い"></button>
-    <button class="letter-button" data-letter="u" data-img="../img/hand_syuwa/hand_syuwa_a_03.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_03.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_03.png" alt="う"></button>
-    <button class="letter-button" data-letter="e" data-img="../img/hand_syuwa/hand_syuwa_a_04.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_04.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_04.png" alt="え"></button>
-    <button class="letter-button" data-letter="o" data-img="../img/hand_syuwa/hand_syuwa_a_05.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_05.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_05.png" alt="お"></button>
-    <button class="letter-button" data-letter="ka" data-img="../img/hand_syuwa/hand_syuwa_a_06.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_06.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_06.png" alt="か"></button>
-    <button class="letter-button" data-letter="ki" data-img="../img/hand_syuwa/hand_syuwa_a_07.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_07.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_07.png" alt="き"></button>
-    <button class="letter-button" data-letter="ku" data-img="../img/hand_syuwa/hand_syuwa_a_08.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_08.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_08.png" alt="く"></button>
-    <button class="letter-button" data-letter="ke" data-img="../img/hand_syuwa/hand_syuwa_a_09.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_09.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_09.png" alt="け"></button>
-    <button class="letter-button" data-letter="ko" data-img="../img/hand_syuwa/hand_syuwa_a_10.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_10.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_10.png" alt="こ"></button>
-    <button class="letter-button" data-letter="sa" data-img="../img/hand_syuwa/hand_syuwa_a_11.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_11.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_11.png" alt="さ"></button>
-    <button class="letter-button" data-letter="si" data-img="../img/hand_syuwa/hand_syuwa_a_12.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_12.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_12.png" alt="し"></button>
-    <button class="letter-button" data-letter="su" data-img="../img/hand_syuwa/hand_syuwa_a_13.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_13.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_13.png" alt="す"></button>
-    <button class="letter-button" data-letter="se" data-img="../img/hand_syuwa/hand_syuwa_a_14.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_14.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_14.png" alt="せ"></button>
-    <button class="letter-button" data-letter="so" data-img="../img/hand_syuwa/hand_syuwa_a_15.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_15.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_15.png" alt="そ"></button>
-    <button class="letter-button" data-letter="ta" data-img="../img/hand_syuwa/hand_syuwa_a_16.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_16.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_16.png" alt="た"></button>
-    <button class="letter-button" data-letter="ti" data-img="../img/hand_syuwa/hand_syuwa_a_17.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_17.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_17.png" alt="ち"></button>
-    <button class="letter-button" data-letter="tu" data-img="../img/hand_syuwa/hand_syuwa_a_18.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_18.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_18.png" alt="つ"></button>
-    <button class="letter-button" data-letter="te" data-img="../img/hand_syuwa/hand_syuwa_a_19.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_19.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_19.png" alt="て"></button>
-    <button class="letter-button" data-letter="to" data-img="../img/hand_syuwa/hand_syuwa_a_20.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_20.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_20.png" alt="と"></button>
-    <button class="letter-button" data-letter="na" data-img="../img/hand_syuwa/hand_syuwa_a_21.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_21.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_21.png" alt="な"></button>
-    <button class="letter-button" data-letter="ni" data-img="../img/hand_syuwa/hand_syuwa_a_22.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_22.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_22.png" alt="に"></button>
-    <button class="letter-button" data-letter="nu" data-img="../img/hand_syuwa/hand_syuwa_a_23.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_23.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_23.png" alt="ぬ"></button>
-    <button class="letter-button" data-letter="ne" data-img="../img/hand_syuwa/hand_syuwa_a_24.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_24.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_24.png" alt="ね"></button>
-    <button class="letter-button" data-letter="no" data-img="../img/hand_syuwa/hand_syuwa_a_25.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_25.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_25.png" alt="の"></button>
-    <button class="letter-button" data-letter="ha" data-img="../img/hand_syuwa/hand_syuwa_a_26.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_26.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_26.png" alt="は"></button>
-    <button class="letter-button" data-letter="hi" data-img="../img/hand_syuwa/hand_syuwa_a_27.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_27.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_27.png" alt="ひ"></button>
-    <button class="letter-button" data-letter="fu" data-img="../img/hand_syuwa/hand_syuwa_a_28.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_28.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_28.png" alt="ふ"></button>
-    <button class="letter-button" data-letter="he" data-img="../img/hand_syuwa/hand_syuwa_a_29.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_29.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_29.png" alt="へ"></button>
-    <button class="letter-button" data-letter="ho" data-img="../img/hand_syuwa/hand_syuwa_a_30.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_30.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_30.png" alt="ほ"></button>
-    <button class="letter-button" data-letter="ma" data-img="../img/hand_syuwa/hand_syuwa_a_31.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_31.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_31.png" alt="ま"></button>
-    <button class="letter-button" data-letter="mi" data-img="../img/hand_syuwa/hand_syuwa_a_32.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_32.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_32.png" alt="み"></button>
-    <button class="letter-button" data-letter="mu" data-img="../img/hand_syuwa/hand_syuwa_a_33.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_33.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_33.png" alt="む"></button>
-    <button class="letter-button" data-letter="me" data-img="../img/hand_syuwa/hand_syuwa_a_34.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_34.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_34.png" alt="め"></button>
-    <button class="letter-button" data-letter="mo" data-img="../img/hand_syuwa/hand_syuwa_a_35.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_35.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_35.png" alt="も"></button>
-    <button class="letter-button" data-letter="ya" data-img="../img/hand_syuwa/hand_syuwa_a_36.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_36.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_36.png" alt="や"></button>
-    <button class="letter-button" data-letter="yu" data-img="../img/hand_syuwa/hand_syuwa_a_37.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_37.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_37.png" alt="ゆ"></button>
-    <button class="letter-button" data-letter="yo" data-img="../img/hand_syuwa/hand_syuwa_a_38.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_38.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_38.png" alt="よ"></button>
-    <button class="letter-button" data-letter="ra" data-img="../img/hand_syuwa/hand_syuwa_a_39.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_39.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_39.png" alt="ら"></button>
-    <button class="letter-button" data-letter="ri" data-img="../img/hand_syuwa/hand_syuwa_a_40.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_40.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_40.png" alt="り"></button>
-    <button class="letter-button" data-letter="ru" data-img="../img/hand_syuwa/hand_syuwa_a_41.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_41.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_41.png" alt="る"></button>
-    <button class="letter-button" data-letter="re" data-img="../img/hand_syuwa/hand_syuwa_a_42.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_42.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_42.png" alt="れ"></button>
-    <button class="letter-button" data-letter="ro" data-img="../img/hand_syuwa/hand_syuwa_a_43.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_43.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_43.png" alt="ろ"></button>
-    <button class="letter-button" data-letter="wa" data-img="../img/hand_syuwa/hand_syuwa_a_44.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_44.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_44.png" alt="わ"></button>
-    <button class="letter-button" data-letter="wo" data-img="../img/hand_syuwa/hand_syuwa_a_45.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_45.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_45.png" alt="を"></button>
-    <button class="letter-button" data-letter="n" data-img="../img/hand_syuwa/hand_syuwa_a_46.png"
-        data-img-src="../img/hand_syuwa/hand_syuwa_a_46.png"><img class="hand-syuwa"
-            src="../img/hand_syuwa/hand_syuwa_a_46.png" alt="ん"></button>
+	data-check-groups='[ { "specificCells" : ["#cell-1", "#cell-2" , "#cell-3" , "#cell-4" ], "alertShown" : false }, { "specificCells" : ["#cell-1", "#cell-7" , "#cell-13" ], "alertShown" : false }]'>
+	<h1 class="levelTitle"></h1>
+	<div class="wrapper row">
 
-    <!-- ここにクロスワードのマスを実装 -->
-    <div id="board" class="grid">
-        <!-- div class="cell">
+		<!-- 文字選択ボタンを実装 -->
+		<div id="buttons" class="container mb-2">
+			<div class="d-flex flex-row gap-1 mb-1">
+				<button class="letter-button btn btn-light btn btn-light" data-letter="a"
+					data-img="../img/hand_syuwa/hand_syuwa_a_01.png" data-img-src="../img/hand_syuwa/hand_syuwa_a_01.png"><img
+						class="hand-syuwa" src="../img/hand_syuwa/hand_syuwa_a_01.png" alt="あ"></button>
+				<button class="letter-button btn btn-light" data-letter="i" data-img="../img/hand_syuwa/hand_syuwa_a_02.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_02.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_02.png" alt="い"></button>
+				<button class="letter-button btn btn-light" data-letter="u" data-img="../img/hand_syuwa/hand_syuwa_a_03.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_03.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_03.png" alt="う"></button>
+				<button class="letter-button btn btn-light" data-letter="e" data-img="../img/hand_syuwa/hand_syuwa_a_04.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_04.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_04.png" alt="え"></button>
+				<button class="letter-button btn btn-light" data-letter="o" data-img="../img/hand_syuwa/hand_syuwa_a_05.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_05.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_05.png" alt="お"></button>
+				<button class="letter-button btn btn-light" data-letter="ka" data-img="../img/hand_syuwa/hand_syuwa_a_06.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_06.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_06.png" alt="か"></button>
+				<button class="letter-button btn btn-light" data-letter="ki" data-img="../img/hand_syuwa/hand_syuwa_a_07.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_07.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_07.png" alt="き"></button>
+				<button class="letter-button btn btn-light" data-letter="ku" data-img="../img/hand_syuwa/hand_syuwa_a_08.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_08.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_08.png" alt="く"></button>
+				<button class="letter-button btn btn-light" data-letter="ke" data-img="../img/hand_syuwa/hand_syuwa_a_09.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_09.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_09.png" alt="け"></button>
+				<button class="letter-button btn btn-light" data-letter="ko" data-img="../img/hand_syuwa/hand_syuwa_a_10.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_10.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_10.png" alt="こ"></button>
+			</div>
+			<div class="d-flex flex-row gap-1 mb-1">
+				<button class="letter-button btn btn-light" data-letter="sa" data-img="../img/hand_syuwa/hand_syuwa_a_11.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_11.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_11.png" alt="さ"></button>
+				<button class="letter-button btn btn-light" data-letter="si" data-img="../img/hand_syuwa/hand_syuwa_a_12.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_12.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_12.png" alt="し"></button>
+				<button class="letter-button btn btn-light" data-letter="su" data-img="../img/hand_syuwa/hand_syuwa_a_13.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_13.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_13.png" alt="す"></button>
+				<button class="letter-button btn btn-light" data-letter="se" data-img="../img/hand_syuwa/hand_syuwa_a_14.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_14.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_14.png" alt="せ"></button>
+				<button class="letter-button btn btn-light" data-letter="so" data-img="../img/hand_syuwa/hand_syuwa_a_15.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_15.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_15.png" alt="そ"></button>
+				<button class="letter-button btn btn-light" data-letter="ta" data-img="../img/hand_syuwa/hand_syuwa_a_16.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_16.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_16.png" alt="た"></button>
+				<button class="letter-button btn btn-light" data-letter="ti" data-img="../img/hand_syuwa/hand_syuwa_a_17.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_17.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_17.png" alt="ち"></button>
+				<button class="letter-button btn btn-light" data-letter="tu" data-img="../img/hand_syuwa/hand_syuwa_a_18.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_18.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_18.png" alt="つ"></button>
+				<button class="letter-button btn btn-light" data-letter="te" data-img="../img/hand_syuwa/hand_syuwa_a_19.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_19.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_19.png" alt="て"></button>
+				<button class="letter-button btn btn-light" data-letter="to" data-img="../img/hand_syuwa/hand_syuwa_a_20.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_20.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_20.png" alt="と"></button>
+			</div>
+			<div class="d-flex flex-row gap-1 mb-1">
+				<button class="letter-button btn btn-light" data-letter="na" data-img="../img/hand_syuwa/hand_syuwa_a_21.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_21.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_21.png" alt="な"></button>
+				<button class="letter-button btn btn-light" data-letter="ni" data-img="../img/hand_syuwa/hand_syuwa_a_22.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_22.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_22.png" alt="に"></button>
+				<button class="letter-button btn btn-light" data-letter="nu" data-img="../img/hand_syuwa/hand_syuwa_a_23.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_23.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_23.png" alt="ぬ"></button>
+				<button class="letter-button btn btn-light" data-letter="ne" data-img="../img/hand_syuwa/hand_syuwa_a_24.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_24.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_24.png" alt="ね"></button>
+				<button class="letter-button btn btn-light" data-letter="no" data-img="../img/hand_syuwa/hand_syuwa_a_25.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_25.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_25.png" alt="の"></button>
+				<button class="letter-button btn btn-light" data-letter="ha" data-img="../img/hand_syuwa/hand_syuwa_a_26.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_26.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_26.png" alt="は"></button>
+				<button class="letter-button btn btn-light" data-letter="hi" data-img="../img/hand_syuwa/hand_syuwa_a_27.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_27.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_27.png" alt="ひ"></button>
+				<button class="letter-button btn btn-light" data-letter="fu" data-img="../img/hand_syuwa/hand_syuwa_a_28.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_28.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_28.png" alt="ふ"></button>
+				<button class="letter-button btn btn-light" data-letter="he" data-img="../img/hand_syuwa/hand_syuwa_a_29.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_29.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_29.png" alt="へ"></button>
+				<button class="letter-button btn btn-light" data-letter="ho" data-img="../img/hand_syuwa/hand_syuwa_a_30.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_30.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_30.png" alt="ほ"></button>
+			</div>
+			<div class="d-flex flex-row gap-1 mb-1">
+				<button class="letter-button btn btn-light" data-letter="ma" data-img="../img/hand_syuwa/hand_syuwa_a_31.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_31.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_31.png" alt="ま"></button>
+				<button class="letter-button btn btn-light" data-letter="mi" data-img="../img/hand_syuwa/hand_syuwa_a_32.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_32.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_32.png" alt="み"></button>
+				<button class="letter-button btn btn-light" data-letter="mu" data-img="../img/hand_syuwa/hand_syuwa_a_33.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_33.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_33.png" alt="む"></button>
+				<button class="letter-button btn btn-light" data-letter="me" data-img="../img/hand_syuwa/hand_syuwa_a_34.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_34.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_34.png" alt="め"></button>
+				<button class="letter-button btn btn-light" data-letter="mo" data-img="../img/hand_syuwa/hand_syuwa_a_35.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_35.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_35.png" alt="も"></button>
+				<button class="letter-button btn btn-light" data-letter="ya" data-img="../img/hand_syuwa/hand_syuwa_a_36.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_36.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_36.png" alt="や"></button>
+				<button class="letter-button btn btn-light" data-letter="yu" data-img="../img/hand_syuwa/hand_syuwa_a_37.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_37.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_37.png" alt="ゆ"></button>
+				<button class="letter-button btn btn-light" data-letter="yo" data-img="../img/hand_syuwa/hand_syuwa_a_38.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_38.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_38.png" alt="よ"></button>
+				<button class="letter-button btn btn-light" data-letter="ra" data-img="../img/hand_syuwa/hand_syuwa_a_39.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_39.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_39.png" alt="ら"></button>
+				<button class="letter-button btn btn-light" data-letter="ri" data-img="../img/hand_syuwa/hand_syuwa_a_40.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_40.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_40.png" alt="り"></button>
+			</div>
+			<div class="d-flex flex-row gap-1 mb-1">
+				<button class="letter-button btn btn-light" data-letter="ru" data-img="../img/hand_syuwa/hand_syuwa_a_41.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_41.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_41.png" alt="る"></button>
+				<button class="letter-button btn btn-light" data-letter="re" data-img="../img/hand_syuwa/hand_syuwa_a_42.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_42.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_42.png" alt="れ"></button>
+				<button class="letter-button btn btn-light" data-letter="ro" data-img="../img/hand_syuwa/hand_syuwa_a_43.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_43.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_43.png" alt="ろ"></button>
+				<button class="letter-button btn btn-light" data-letter="wa" data-img="../img/hand_syuwa/hand_syuwa_a_44.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_44.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_44.png" alt="わ"></button>
+				<button class="letter-button btn btn-light" data-letter="wo" data-img="../img/hand_syuwa/hand_syuwa_a_45.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_45.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_45.png" alt="を"></button>
+				<button class="letter-button btn btn-light" data-letter="n" data-img="../img/hand_syuwa/hand_syuwa_a_46.png"
+					data-img-src="../img/hand_syuwa/hand_syuwa_a_46.png"><img class="hand-syuwa"
+						src="../img/hand_syuwa/hand_syuwa_a_46.png" alt="ん"></button>
+			</div>
+		</div>
+
+		<!-- ここにクロスワードのマスを実装 -->
+		<div id="board" class="grid">
+			<!-- div class="cell">
             <span class="cell-number">1</span>
             <div class="cell-content" data-correct-letter="a" id="cell-1"></div>
         </div -->
-    </div>
+		</div>
 
-    <div class="hints">
-        <h2>ヨコの鍵</h2>
-        <ul id="horizontal">
-            <!-- li>1. あいうえ</li>
+		<div class="hints mt-2">
+			<!-- h2>ヨコの鍵</h2>
+			<！ul id="horizontal" -->
+			<!-- li>1. あいうえ</li>
             <li>2. ヒント2</li -->
-            <!-- 他のヒントをここに追加 -->
-        </ul>
-        <h2>タテの鍵</h2>
-        <ul id="vertical">
-            <!-- li>1. あきら</li>
+			<!-- 他のヒントをここに追加 -->
+			<!-- /ul-->
+			<!-- h2>タテの鍵</h2>
+		<ul id="vertical">
+			<!-- li>1. あきら</li>
             <li>2. ヒント2</li -->
-            <!-- 他のヒントをここに追加 -->
-        </ul>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="level0.js"></script>
-    <script src="../js/main.js"></script>
+			<!-- 他のヒントをここに追加 -->
+			<!-- /ul -->
+
+			<nav>
+				<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+					<button class="nav-link active" id="nav-yoko-tab" data-bs-toggle="tab" data-bs-target="#nav-yoko"
+						type="button" role="tab" aria-controls="nav-yoko" aria-selected="true">ヨコのカギ</button>
+					<button class="nav-link" id="nav-tate-tab" data-bs-toggle="tab" data-bs-target="#nav-tate" type="button"
+						role="tab" aria-controls="nav-tate" aria-selected="false">タテのカギ</button>
+				</div>
+			</nav>
+			<div class="tab-content" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-yoko" role="tabpanel" aria-labelledby="nav-yoko-tab"
+					tabindex="0">
+					<ul id="horizontal">
+					</ul>
+				</div>
+				<div class="tab-pane fade" id="nav-tate" role="tabpanel" aria-labelledby="nav-tate-tab" tabindex="0">
+					<ul id="vertical">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<script src="level0.js"></script>
+	<script src="../js/main.js"></script>
 </body>
 
 </html>

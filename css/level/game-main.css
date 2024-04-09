@@ -3,7 +3,7 @@
   height: 30px;
 }
 
-.hints {
+#hints {
   height: 200px;  /* 高さを適切な値に設定 */
   overflow-y: auto;  /* 縦方向のスクロールを有効にする */
   border: 1px solid #000;  /* 枠線を追加 */
